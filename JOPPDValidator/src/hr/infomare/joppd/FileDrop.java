@@ -651,7 +651,7 @@ public class FileDrop
         private java.io.File[] files;
 
         /**
-         * Constructs an {@link Event}with the array
+         * Constructs an {@link FileDrop.Event}with the array
          * of files that were dropped and the
          * {@link FileDrop}that initiated the event.
          *
@@ -711,7 +711,7 @@ public class FileDrop
      * </code></pre>
      *
      * The {@link java.awt.datatransfer.DataFlavor}associated with
-     * {@link TransferableObject}has the representation class
+     * {@link FileDrop.TransferableObject}has the representation class
      * <tt>net.iharder.dnd.TransferableObject.class</tt> and MIME type
      * <tt>application/x-net.iharder.dnd.TransferableObject</tt>.
      * This data flavor is accessible via the static
@@ -737,7 +737,7 @@ public class FileDrop
 
         /**
          * The default {@link java.awt.datatransfer.DataFlavor}for
-         * {@link TransferableObject}has the representation class
+         * {@link FileDrop.TransferableObject}has the representation class
          * <tt>net.iharder.dnd.TransferableObject.class</tt>
          * and the MIME type
          * <tt>application/x-net.iharder.dnd.TransferableObject</tt>.
@@ -756,7 +756,7 @@ public class FileDrop
 
 
         /**
-         * Creates a new {@link TransferableObject}that wraps <var>data</var>.
+         * Creates a new {@link FileDrop.TransferableObject}that wraps <var>data</var>.
          * Along with the {@link #DATA_FLAVOR}associated with this class,
          * this creates a custom data flavor with a representation class
          * determined from <code>data.getClass()</code> and the MIME type
@@ -773,13 +773,13 @@ public class FileDrop
 
 
         /**
-         * Creates a new {@link TransferableObject}that will return the
+         * Creates a new {@link FileDrop.TransferableObject}that will return the
          * object that is returned by <var>fetcher</var>.
          * No custom data flavor is set other than the default
          * {@link #DATA_FLAVOR}.
          *
-         * @see Fetcher
-         * @param fetcher The {@link Fetcher}that will return the data object
+         * @see FileDrop.TransferableObject.Fetcher
+         * @param fetcher The {@link FileDrop.TransferableObject.Fetcher}that will return the data object
          * @since 1.1
          */
         public TransferableObject( Fetcher fetcher )
@@ -789,16 +789,16 @@ public class FileDrop
 
 
         /**
-         * Creates a new {@link TransferableObject}that will return the
+         * Creates a new {@link FileDrop.TransferableObject}that will return the
          * object that is returned by <var>fetcher</var>.
          * Along with the {@link #DATA_FLAVOR}associated with this class,
          * this creates a custom data flavor with a representation class <var>dataClass</var>
          * and the MIME type
          * <tt>application/x-net.iharder.dnd.TransferableObject</tt>.
          *
-         * @see Fetcher
+         * @see FileDrop.TransferableObject.Fetcher
          * @param dataClass The {@link java.lang.Class}to use in the custom data flavor
-         * @param fetcher The {@link Fetcher}that will return the data object
+         * @param fetcher The {@link FileDrop.TransferableObject.Fetcher}that will return the data object
          * @since 1.1
          */
         public TransferableObject( Class dataClass, Fetcher fetcher )
@@ -808,7 +808,7 @@ public class FileDrop
 
         /**
          * Returns the custom {@link java.awt.datatransfer.DataFlavor}associated
-         * with the encapsulated object or <tt>null</tt> if the {@link Fetcher}
+         * with the encapsulated object or <tt>null</tt> if the {@link FileDrop.TransferableObject.Fetcher}
          * constructor was used without passing a {@link java.lang.Class}.
          *
          * @return The custom data flavor for the encapsulated object
@@ -826,7 +826,7 @@ public class FileDrop
          * Returns a two- or three-element array containing first
          * the custom data flavor, if one was created in the constructors,
          * second the default {@link #DATA_FLAVOR}associated with
-         * {@link TransferableObject}, and third the
+         * {@link FileDrop.TransferableObject}, and third the
          * {@link java.awt.datatransfer.DataFlavor.stringFlavor}.
          *
          * @return An array of supported data flavors
@@ -850,8 +850,8 @@ public class FileDrop
 
 
         /**
-         * Returns the data encapsulated in this {@link TransferableObject}.
-         * If the {@link Fetcher}constructor was used, then this is when
+         * Returns the data encapsulated in this {@link FileDrop.TransferableObject}.
+         * If the {@link FileDrop.TransferableObject.Fetcher}constructor was used, then this is when
          * the {@link hr.infomare.JOPPD.FileDrop.TransferableObject.Fetcher#getObject getObject()}method will be called.
          * If the requested data flavor is not supported, then the
          * {@link hr.infomare.JOPPD.FileDrop.TransferableObject.Fetcher#getObject getObject()}method will not be called.
@@ -904,11 +904,11 @@ public class FileDrop
     /* ********  I N N E R   I N T E R F A C E   F E T C H E R  ******** */    
 
         /**
-         * Instead of passing your data directly to the {@link TransferableObject}
+         * Instead of passing your data directly to the {@link FileDrop.TransferableObject}
          * constructor, you may want to know exactly when your data was received
          * in case you need to remove it from its source (or do anyting else to it).
          * When the {@link #getTransferData getTransferData(...)}method is called
-         * on the {@link TransferableObject}, the {@link Fetcher}'s
+         * on the {@link FileDrop.TransferableObject}, the {@link FileDrop.TransferableObject.Fetcher}'s
          * {@link #getObject getObject()}method will be called.
          *
          * @author Robert Harder
@@ -920,7 +920,7 @@ public class FileDrop
         {
             /**
              * Return the object being encapsulated in the
-             * {@link TransferableObject}.
+             * {@link FileDrop.TransferableObject}.
              *
              * @return The dropped object
              * @since 1.1
