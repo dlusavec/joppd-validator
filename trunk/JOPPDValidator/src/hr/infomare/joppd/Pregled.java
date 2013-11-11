@@ -61,7 +61,7 @@ public class Pregled extends javax.swing.JFrame {
                 //Uvijek samo jedna datoteka
                 for (int i = 0; i < 1; i++) {
                     try {
-                        nazivDatoteke = files[i].getCanonicalPath();
+                        nazivDatoteke = files[i].getCanonicalPath();                        
                     } catch (java.io.IOException e) {
                         Pomocna.greskaBox(e.getMessage());
                     }
@@ -69,6 +69,7 @@ public class Pregled extends javax.swing.JFrame {
                 resetCombo();
                 validacijaXMLDatoteke(nazivDatoteke);
                 ucitajXMLDatotekuUEditor();
+                postaviTitle();
                 if (!xmlIspravan) {
                     napuniCombo();
                     Pomocna.greskaBox("XML datoteka nije ispravna !", jScrollPane1);
@@ -80,7 +81,9 @@ public class Pregled extends javax.swing.JFrame {
         });
     }
 
-
+    private void postaviTitle(){
+        this.setTitle("JOPPD validator, datoteka: "+ nazivDatoteke.trim());
+    }
     private void validacijaXMLDatoteke(String xml) {
         //String xsd = "C:\\JOPPD\\ObrazacJOPPD-v1-0.xsd";
         String xsd = "xsd/ObrazacJOPPD-v1-0.xsd";
