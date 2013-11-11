@@ -49,6 +49,8 @@ public class Pregled extends javax.swing.JFrame {
 
 
     private void inicijalizacija() {
+       jEditorPane1.setEditorKitForContentType("text/xml", new XmlEditorKit());
+       jEditorPane1.setContentType("text/xml");
         dragAndDrop();
     }
     // Podrška sa Drag and drop
