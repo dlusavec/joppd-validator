@@ -175,13 +175,25 @@
                   <url path="../../../../JOPPD/"/>
                </list>
             </hash>
+            <hash>
+               <url n="content-folder-url" path="../../../../Users/damirl/Desktop/"/>
+               <list n="pattern-filters">
+                  <string v="+JOPPD_14001.xml"/>
+               </list>
+               <list n="url-path">
+                  <url path="../../../../Users/damirl/Desktop/"/>
+               </list>
+            </hash>
+            <hash>
+               <list n="pattern-filters">
+                  <string v="+**"/>
+               </list>
+               <list n="url-path">
+                  <url path="src/"/>
+               </list>
+            </hash>
          </list>
-         <list n="pattern-filters">
-            <string v="+**"/>
-         </list>
-         <list n="url-path">
-            <url path="src/"/>
-         </list>
+         <list n="url-path"/>
       </hash>
    </hash>
    <hash n="oracle.jdeveloper.runner.RunConfigurations">

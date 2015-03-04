@@ -88,7 +88,7 @@ public class Pregled extends javax.swing.JFrame {
     }
     private void validacijaXMLDatoteke(String xml) {
         //String xsd = "C:\\JOPPD\\ObrazacJOPPD-v1-0.xsd";
-        String xsd = "xsd/ObrazacJOPPD-v1-0.xsd";
+        String xsd = "xsd/ObrazacJOPPD-v1-1.xsd";
         greske = new LinkedList<SAXParseException>();
 
         try {
